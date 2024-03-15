@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+}
+
+.grid-box {
+    display: flex;
+    border: 1px solid  white;
+    height: 50px;
+    width: 50px;  
+}
