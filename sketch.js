@@ -25,3 +25,12 @@ resetBtn.addEventListener('click', () => {
     container.removeChild(removed);
     makeGrids(prompt("Grid Size"));
 });
+
+const squares =  document.querySelector(".row");
+squares.addEventListener('mouseover', () => {
+    squares.style.backgroundColor = "red";
+});
+
+squares.addEventListener('mouseout', () => {
+    squares.style.backgroundColor = "white";
+});
