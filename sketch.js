@@ -1,5 +1,4 @@
 function makeGrids(size) {
-    //let screen = document.querySelector(".sketch-screen");
     let screen = document.createElement("div");
     screen.className = "sketch-screen";
     container.appendChild(screen);
@@ -14,7 +13,19 @@ function makeGrids(size) {
       }
       screen.appendChild(column);
     }
-  }
+    const squares =  document.querySelectorAll(".row");
+    squares.forEach(element => {
+      element.addEventListener('mouseover', () => {
+      element.style.backgroundColor = "red";
+      });
+    });
+
+    squares.forEach(element => {
+      element.addEventListener('mouseout', () => {
+      element.style.backgroundColor = 'white';
+      });
+    });
+}
 
 const container = document.querySelector(".container");
 makeGrids(4);
@@ -24,13 +35,4 @@ resetBtn.addEventListener('click', () => {
     const removed = document.querySelector(".sketch-screen");
     container.removeChild(removed);
     makeGrids(prompt("Grid Size"));
-});
-
-const squares =  document.querySelector(".row");
-squares.addEventListener('mouseover', () => {
-    squares.style.backgroundColor = "red";
-});
-
-squares.addEventListener('mouseout', () => {
-    squares.style.backgroundColor = "white";
 });
